@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "adb connect",
+            "type": "shell",
+            "command": "adb connect 192.168.8.1:5555; adb shell \"mount -o remount,rw /app/webroot\"; adb shell \"mount -o remount,rw /system\"; adb shell \"mount -o remount,rw /app\";",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "push",
+            "type": "shell",
+            "command": "$path = '${relativeFileDirname}'.replace('\\', '/'); adb push ${file} $path/${fileBasename} ; adb shell chmod 777 $path/${fileBasename}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "gzip",
+            "type": "shell",
+            "command": "$path = '${relativeFileDirname}'.replace('\\', '/'); ../7z a -tgzip ${file}.gz ${file}; adb push ${file}.gz $path/${fileBasename}.gz ; adb shell chmod 777 $path/${fileBasename}.gz",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "$path = '/${relativeFileDirname}'.replace('\\', '/'); adb push ${file} $path/${fileBasename} ; adb shell chmod 777 $path/${fileBasename}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
+

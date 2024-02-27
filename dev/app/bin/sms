@@ -1,0 +1,3 @@
+#!/system/bin/busybox sh
+
+LD_PRELOAD="/app/bin/oled_hijack/mod/sms_webhook.so" exec /app/bin/sms.orig

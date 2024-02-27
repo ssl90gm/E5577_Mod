@@ -1,0 +1,438 @@
+<link rel="stylesheet" href="../css/openvpn.css" />
+
+<div id="header_turnbg" class="head_div head_dim">
+  <div class="head_dim head_filter">
+    <div class="logo">
+      <!-- <img src="../res/logo.gif" /> -->
+    </div>
+    <div id="union_main_menu" class="main_menu clr_white_main_menu_active">
+      <!-- OPENVPN -->
+      <div class="vpn-container">
+        <div class="vpn-config">
+          <h2 class="vpn-config__title">
+            OpenVPN
+            <span class="vpn-config__info vpn-client-ip"></span>
+          </h2>
+          <div class="vpn-content vpn-setting">
+            <div class="switch-control">
+              <p class="switch-control__label">Включить OpenVpn</p>
+              <label class="switch" for="vpn-on">
+                <input class="switch__checked" type="checkbox" id="vpn-on" />
+                <span class="switch__control"></span>
+              </label>
+            </div>
+            <div class="switch-control">
+              <p class="switch-control__label">Блокировать весь трафик (кроме Vpn)</p>
+              <label class="switch" for="vpn-exclusive">
+                <input class="switch__checked" type="checkbox" id="vpn-exclusive" />
+                <span class="switch__control"></span>
+              </label>
+            </div>
+            <div class="vpn-setting-content">
+              <div class="switch-control">
+                <p class="switch-control__label">Запускать при включении роутера </p>
+                <label class="switch" for="vpn-autorun">
+                  <input class="switch__checked" type="checkbox" id="vpn-autorun" />
+                  <span class="switch__control"></span>
+                </label>
+              </div>
+              <div class="switch-control">
+                <p class="switch-control__label">Включить (DNS over TLS) для Vpn</p>
+                <label class="switch" for="vpn-dot">
+                  <input class="switch__checked" type="checkbox" id="vpn-dot" />
+                  <span class="switch__control"></span>
+                </label>
+              </div>
+              <div class="vpn-ovpn">
+                <h3 class="vpn-ovpn__title">Ovpn конфигурации</h3>
+                <div class="vpn-ovpn__wrap">
+                  <button class="vpn-ovpn__btn vpn-ovpn__btn--upload" title="Загрузить файл конфигурации">
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.5 20L18.5 14M18.5 14L21 16.5M18.5 14L16 16.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M12 19H5C3.89543 19 3 18.1046 3 17V7C3 5.89543 3.89543 5 5 5H9.58579C9.851 5 10.1054 5.10536 10.2929 5.29289L12 7H19C20.1046 7 21 7.89543 21 9V11" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <input type="file" id="ovpn-upload" accept=".ovpn" style="display: none" />
+                  <button class="vpn-ovpn__btn vpn-ovpn__btn--clean" title="удалить все файлы конфигураций">
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4698 2.25H11.5302C12.0129 2.24999 12.421 2.24998 12.7592 2.27848C13.1166 2.30859 13.451 2.37374 13.7758 2.53412C14.0492 2.66911 14.2983 2.84863 14.5129 3.06534C14.7677 3.32282 14.9353 3.61939 15.0768 3.94892C15.2108 4.26078 15.3399 4.64793 15.4925 5.10588L15.7115 5.76283C15.7377 5.84148 15.7502 5.92141 15.7502 6H18.2222C19.2041 6 20 6.79594 20 7.77778C20 7.90051 19.9005 8 19.7778 8H3.22222C3.09949 8 3 7.90051 3 7.77778C3 6.79594 3.79594 6 4.77778 6H7.24979C7.2498 5.92141 7.26226 5.84148 7.28848 5.76283L7.50745 5.10592C7.66009 4.64796 7.78913 4.26078 7.92313 3.94892C8.06472 3.61939 8.23225 3.32282 8.48713 3.06534C8.70165 2.84863 8.95073 2.66911 9.22416 2.53412C9.54902 2.37374 9.88335 2.30859 10.2407 2.27848C10.579 2.24998 10.9871 2.24999 11.4698 2.25ZM14.079 5.60888L14.2094 6H8.79056L8.92093 5.60888C9.08566 5.11469 9.19521 4.788 9.3013 4.54107C9.40259 4.30534 9.47964 4.19487 9.55315 4.12061C9.65067 4.02211 9.76388 3.9405 9.88817 3.87915C9.98186 3.83289 10.111 3.79473 10.3667 3.77318C10.6345 3.75062 10.9791 3.75 11.5 3.75C12.0209 3.75 12.3655 3.75062 12.6333 3.77318C12.889 3.79473 13.0181 3.83289 13.1118 3.87915C13.2361 3.9405 13.3493 4.02211 13.4468 4.12061C13.5203 4.19487 13.5974 4.30534 13.6987 4.54107C13.8048 4.788 13.9143 5.11469 14.079 5.60888Z" fill="#000" />
+                      <path d="M6.31017 21.6385C5.88874 21.2769 5.79537 20.67 5.60863 19.4562L4.08861 9.57603C4.04742 9.3083 4.02682 9.17444 4.10165 9.08722C4.17647 9 4.31191 9 4.58279 9H18.4172C18.6881 9 18.8235 9 18.8983 9.08722C18.9731 9.17444 18.9526 9.3083 18.9114 9.57603L17.3913 19.4562C17.2046 20.67 17.1112 21.2769 16.6898 21.6385C16.2684 22 15.6543 22 14.4262 22H8.57374C7.34564 22 6.7316 22 6.31017 21.6385Z" fill="#000" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="von-ovpn-files"></div>
+            </div>
+          </div>
+          <div class="vpn-log">
+            <a class="vpn-log__link" href="#" target="_blank">OpenVpn Log</a>
+          </div>
+        </div>
+      </div>
+      <!-- \OPENVPN -->
+      <ul class="clr_white_header_hover">
+        <!-- OPENVPN MENU-->
+        <li class="vpn_menu"></li>
+        <!-- \OPENVPN MENU-->
+        <li id="menu_index">
+          <a id="home" href="home.html">
+            <span>1</span>
+          </a>
+        </li>
+        <li id="menu_info">
+          <a id="info" href="deviceinformation.html">
+            <span></span>
+          </a>
+        </li>
+        <li id="menu_statistic">
+          <a id="statistic" href="statistic.html">
+            <span>2</span>
+          </a>
+        </li>
+        <li id="menu_sms">
+          <a id="sms" href="smsinbox.html">
+            <span>3</span>
+          </a>
+        </li>
+        <li id="menu_pb">
+          <a id="pb" href="phonebook.html">
+            <span>4</span>
+          </a>
+        </li>
+        <li id="menu_ussd">
+          <a id="ussd" href="ussd.html">
+            <span></span>
+          </a>
+        </li>
+        <li id="menu_update">
+          <a id="update" href="update.html">
+            <span></span>
+          </a>
+        </li>
+
+        <li id="menu_ota">
+          <a id="ota" href="ota.html">
+            <span></span>
+          </a>
+        </li>
+        <li id="menu_settings">
+          <a id="settings" href="quicksetup.html">
+            <span></span>
+          </a>
+        </li>
+        <li id="menu_sharing">
+          <a id="sharing" href="sdcardsharing.html">
+            <span></span>
+          </a>
+        </li>
+        <li id="menu_stk">
+          <a id="stk" href="stk.html">
+            <span></span>
+          </a>
+        </li>
+        <!-- <li id="menu_more">
+                    <a id="more" href="#">
+                    <span></span>
+                    </a>
+                </li>
+                <li id="menu_appmanagement">
+                    <a id="appmanagement" href="appmanagement.html">
+                    <span></span>
+                    </a>
+                </li>-->
+      </ul>
+    </div>
+    <div class="help">
+      <div class="help_left">
+        <span>
+          <select id="lang" style="display: none"></select>
+        </span>
+        <span class="clr_bold_a">
+          <a id="help_url" href="#" target="_blank">
+            <span id="help_span"></span>
+          </a>
+        </span>
+        <span>
+          <span class="username" id="username_span" style="display: none"> </span>
+        </span>
+        <span>&nbsp;</span>
+      </div>
+      <div class="help_right">
+        <span class="logout">
+          <span id="logout_span"></span>
+        </span>
+      </div>
+    </div>
+    <div class="tools">
+      <ul>
+        <li id="update_gif" class="nav01">
+          <a id="tooltip_update" href="update.html"></a>
+        </li>
+        <li id="sms_full" class="nav02">
+          <a id="tooltip_sms_full" href="smsinbox.html"></a>
+        </li>
+        <li id="sms_gif" class="nav02">
+          <a id="tooltip_sms" href="smsinbox.html"></a>
+        </li>
+        <li><div id="index_plmn_name_main" class="signal_header"></div></li>
+        <li><div id="status_img2" class="signal_header"></div></li>
+        <li id="sim_signal_gif" class="nav03"></li>
+        <li id="station_gif" class="nav08"></li>
+        <li id="wan_gif" class="nav05"></li>
+        <li id="wifi_gif" class="nav06"></li>
+        <li id="indoor_gif" class="nav10"></li>
+        <li id="battery_gif" class="nav07"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  (async () => {
+    const UPDATE_INTERVAL = 2000;
+    const LOCK_MENU_TIMEOUT = 1000;
+
+    let setIntervalHandler = null;
+    let lockCloseModal = false;
+
+    initialize();
+
+    function getDomElements() {
+      return {
+        vpnLogsLinkEl: document.querySelector(".vpn-log__link"),
+        vpnDotCheckbox: document.getElementById("vpn-dot"),
+        vpnOnCheckbox: document.getElementById("vpn-on"),
+        vpnAutorunCheckbox: document.getElementById("vpn-autorun"),
+        vpnExclusiveCheckbox: document.getElementById("vpn-exclusive"),
+        vpnClientIP: document.querySelector(".vpn-client-ip"),
+        ovpnFilesContent: document.querySelector(".von-ovpn-files"),
+        vpnSettingContent: document.querySelector(".vpn-container"),
+        vpnStatusIcon: document.querySelector(".vpn_menu"),
+        ovpnUploadEl: document.getElementById("ovpn-upload"),
+        ovpnButtonUploadEl: document.querySelector(".vpn-ovpn__btn--upload"),
+        ovpnButtonCleanAllEl: document.querySelector(".vpn-ovpn__btn--clean"),
+        liVpnMenuElement: document.querySelector(".vpn_menu"),
+      };
+    }
+
+    function initialize() {
+      const elements = getDomElements();
+      if (!elements.liVpnMenuElement) return;
+
+      var url = location.hostname;
+      elements.vpnLogsLinkEl.setAttribute("href", `//${url}:5080/vpn.html`);
+
+      addEventsListener(elements);
+      startUpdateInterval(elements);
+    }
+
+    function addEventsListener(elements) {
+      // Открытие окна
+      const contentClass = elements.vpnSettingContent.classList;
+      elements.liVpnMenuElement.addEventListener("click", () => contentClass.toggle("vpn-container--show"));
+      // Закрытие по клику вне окна openvpn меню
+      document.addEventListener("click", (ev) => {
+        if (!lockCloseModal 
+        && !ev.target.classList.contains("vpn_menu") 
+        && !ev.target.closest(".vpn-container") 
+        && contentClass.contains("vpn-container--show")) {
+          contentClass.toggle("vpn-container--show");
+        }
+      });
+
+      elements.vpnOnCheckbox.addEventListener("change", async (ev) => sendRequest(`connect=${+ev.target.checked}`));
+      elements.vpnExclusiveCheckbox.addEventListener("change", async (ev) => sendRequest(`exclusive=${+ev.target.checked}`));
+      elements.vpnAutorunCheckbox.addEventListener("change", async (ev) => sendRequest(`autorun=${+ev.target.checked}`));
+      elements.vpnDotCheckbox.addEventListener("change", async (ev) => sendRequest(`dot=${+ev.target.checked}`));
+      elements.ovpnButtonUploadEl.addEventListener("click", () => ovpnShowFileUpload(elements.ovpnUploadEl));
+      elements.ovpnUploadEl.addEventListener("change", async (ev) => await ovpnFileUpload(ev, elements));
+      elements.ovpnButtonCleanAllEl.addEventListener("click", () => ovpnFileAllDelete(elements.ovpnFilesContent));
+    }
+
+    async function startUpdateInterval(elements) {
+      if (setIntervalHandler) {
+        clearInterval(setIntervalHandler);
+      }
+
+      setIntervalHandler = setInterval(async () => {
+        statusUpdate(elements);
+      }, UPDATE_INTERVAL);
+
+      statusUpdate(elements);
+    }
+
+    function statusUpdate(elements) {
+      sendRequest().then((data) => {
+        // обновление VPN
+        vpnSectionUpdate(data, elements);
+      });
+    }
+
+    function vpnSectionUpdate(vpn, elements) {
+      if (!vpn) return;
+
+      // смена иконки в меню в зависимости от статуса подключения
+      elements.vpnStatusIcon.classList.toggle("vpn-menu--connect", vpn.connect);
+
+      // выводим client_ip / gateway_ip
+      const client_ip = vpn.client_ip;
+      const gateway_ip = vpn.gateway_ip;
+      const showIps = `${client_ip}/${gateway_ip}`;
+      if (showIps != elements.vpnClientIP.textContent) {
+        elements.vpnClientIP.textContent = showIps;
+      }
+
+      // устанавливает on, exclusive и auto
+      elements.vpnOnCheckbox.checked = vpn.on;
+      elements.vpnExclusiveCheckbox.checked = vpn.exclusive;
+      elements.vpnAutorunCheckbox.checked = vpn.auto;
+      controlDisable(".vpn-setting-content", !vpn.on);
+
+      // dot
+      elements.vpnDotCheckbox.checked = vpn.dot;
+
+      // если процесс openvpn не работает
+      if (!vpn.running) {
+        elements.vpnOnCheckbox.checked = false;
+        elements.vpnStatusIcon.classList.toggle("vpn-menu--connect", false);
+      }
+
+      // вывод списка файлов ovpn
+      if (vpn.files.length == 0) return;
+      vpn.files.forEach((fileName) => {
+        const checked = vpn.active_file == fileName;
+        const element = renderOvpnFiles(fileName, checked, elements);
+        if (element) elements.ovpnFilesContent.appendChild(element);
+      });
+    }
+
+    function ovpnFileDelete(fileName) {
+      lockCloseModal = true;
+      if (confirm(`Будет удален файл "${fileName}", прожолжить?`)) {
+        sendRequest("delete=" + fileName);
+        const fId = fileName.replace(".", "_").replace(" ", "_");
+        const ovpnEl = document.getElementById(`ovpn-${fId}`);
+        if (ovpnEl) ovpnEl.remove();
+      }
+      unlockShowOrHideMenu();
+    }
+
+    
+
+    function ovpnFileAllDelete(element) {
+      lockCloseModal = true;
+      if (confirm("Будут удалены все файлы, прожолжить?")) {
+        sendRequest("delete=all");
+        element.innerHTML = "";
+      }
+      unlockShowOrHideMenu();
+    }
+
+    function unlockShowOrHideMenu() {
+      setTimeout(() => { 
+        lockCloseModal = false; 
+      }, LOCK_MENU_TIMEOUT);
+    }
+
+    function ovpnShowFileUpload(element) {
+      element.click();
+    }
+
+    async function ovpnFileUpload(ev, elements) {
+      const file = ev.target.files[0];
+      if (!file) return;
+
+      let formData = new FormData();
+      formData.append("file", file);
+
+      try {
+        var url = location.hostname;
+        const response = await fetch(`http://${url}:5080/cgi-bin/openvpn.cgi`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const element = renderOvpnFiles(file.name, false, elements);
+          if (element) elements.ovpnFilesContent.appendChild(element);
+        } else {
+          alert("Произошла ошибка при отправке файла.");
+        }
+      } catch (error) {
+        alert("Произошла ошибка при отправке файла.");
+      }
+    }
+
+    function renderOvpnFiles(fileName, checked, elements) {
+      const fId = fileName.replace(".", "_").replace(" ", "_");
+
+      const switchAlreadyEl = document.getElementById(`ovpn-${fId}`);
+      if (switchAlreadyEl) return false;
+
+      const switchControlEl = document.createElement("div");
+      switchControlEl.className = "switch-control";
+      switchControlEl.id = `ovpn-${fId}`;
+
+      const switchControlLabelEl = document.createElement("p");
+      switchControlLabelEl.className = "switch-control__label";
+      switchControlLabelEl.textContent = fileName;
+      switchControlEl.appendChild(switchControlLabelEl);
+
+      const divWrap = document.createElement("div");
+      divWrap.className = "vpn-ovpn__wrap";
+      switchControlEl.appendChild(divWrap);
+
+      const buttonRemove = document.createElement("button");
+      buttonRemove.className = "vpn-ovpn__btn vpn-ovpn__btn--remove";
+      buttonRemove.innerHTML = '<svg fill="#000" width="12px" height="12px" viewBox="-1.7 0 20.4 20.4" xmlns="http://www.w3.org/2000/svg"><path d="M16.417 10.283A7.917 7.917 0 1 1 8.5 2.366a7.916 7.916 0 0 1 7.917 7.917zm-6.804.01 3.032-3.033a.792.792 0 0 0-1.12-1.12L8.494 9.173 5.46 6.14a.792.792 0 0 0-1.12 1.12l3.034 3.033-3.033 3.033a.792.792 0 0 0 1.12 1.119l3.032-3.033 3.033 3.033a.792.792 0 0 0 1.12-1.12z" /></svg>';
+      buttonRemove.addEventListener("click", () => ovpnFileDelete(fileName));
+      divWrap.appendChild(buttonRemove);
+
+      const labelSwitchEl = document.createElement("label");
+      labelSwitchEl.className = "switch";
+      labelSwitchEl.setAttribute("for", fId);
+      divWrap.appendChild(labelSwitchEl);
+
+      const inputCheckBox = document.createElement("input");
+      inputCheckBox.className = "switch__checked";
+      inputCheckBox.type = "radio";
+      inputCheckBox.name = "set-ovpn";
+      inputCheckBox.id = fId;
+      inputCheckBox.checked = checked;
+      inputCheckBox.addEventListener("change", () => selectOvpnActiveFile(fileName, elements.vpnStatusIcon));
+      labelSwitchEl.appendChild(inputCheckBox);
+
+      const spanEl = document.createElement("span");
+      spanEl.className = "switch__control";
+      labelSwitchEl.appendChild(spanEl);
+
+      return switchControlEl;
+    }
+
+    function selectOvpnActiveFile(fileName, element) {
+      sendRequest("set=" + fileName);
+      element.classList.remove("vpn-menu--connect");
+    }
+
+    function controlDisable(selector, disable) {
+      document.querySelectorAll(selector).forEach((el) => {
+        if (disable) {
+          el.classList.add("control-disable");
+        } else {
+          el.classList.remove("control-disable");
+        }
+      });
+    }
+
+    async function sendRequest(queryString) {
+      try {
+        var url = location.hostname;
+        const response = await fetch(`http://${url}:5080/cgi-bin/openvpn.cgi?${queryString || ""}`);
+        if (response.ok) {
+          return await response.json();
+        }
+      } catch (error) {}
+      return false;
+    }
+  })();
+</script>

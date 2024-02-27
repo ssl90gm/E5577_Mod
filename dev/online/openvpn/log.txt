@@ -1,0 +1,56 @@
+Fri Jan 26 00:00:16 2024 OpenVPN 2.4.8 [git:huawei_2_4_8/3976acda9bf10b5e] arm-unknown-linux-gnueabi [SSL (OpenSSL)] [COMP_STUB] [EPOLL] [AEAD] built on Dec  5 2019
+Fri Jan 26 00:00:16 2024 library versions: OpenSSL 1.0.2t  10 Sep 2019
+Fri Jan 26 00:00:16 2024 WARNING: --ns-cert-type is DEPRECATED.  Use --remote-cert-tls instead.
+Fri Jan 26 00:00:16 2024 NOTE: the current --script-security setting may allow this configuration to call user-defined scripts
+Fri Jan 26 00:00:16 2024 TCP/UDP: Preserving recently used remote address: [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:16 2024 Attempting to establish TCP connection with [AF_INET]127.0.0.1:1080 [nonblock]
+Fri Jan 26 00:00:16 2024 TCP connection established with [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:16 2024 TCP_CLIENT link local: (not bound)
+Fri Jan 26 00:00:16 2024 TCP_CLIENT link remote: [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:16 2024 Connection reset, restarting [0]
+Fri Jan 26 00:00:16 2024 SIGUSR1[soft,connection-reset] received, process restarting
+Fri Jan 26 00:00:26 2024 WARNING: --ns-cert-type is DEPRECATED.  Use --remote-cert-tls instead.
+Fri Jan 26 00:00:26 2024 NOTE: the current --script-security setting may allow this configuration to call user-defined scripts
+Fri Jan 26 00:00:26 2024 TCP/UDP: Preserving recently used remote address: [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:26 2024 Attempting to establish TCP connection with [AF_INET]127.0.0.1:1080 [nonblock]
+Fri Jan 26 00:00:26 2024 TCP connection established with [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:26 2024 TCP_CLIENT link local: (not bound)
+Fri Jan 26 00:00:26 2024 TCP_CLIENT link remote: [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:26 2024 event_wait : Interrupted system call (code=4)
+Fri Jan 26 00:00:26 2024 SIGUSR1[hard,] received, process restarting
+Fri Jan 26 00:00:36 2024 WARNING: --ns-cert-type is DEPRECATED.  Use --remote-cert-tls instead.
+Fri Jan 26 00:00:36 2024 NOTE: the current --script-security setting may allow this configuration to call user-defined scripts
+Fri Jan 26 00:00:36 2024 TCP/UDP: Preserving recently used remote address: [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:36 2024 Attempting to establish TCP connection with [AF_INET]127.0.0.1:1080 [nonblock]
+Fri Jan 26 00:00:36 2024 TCP connection established with [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:36 2024 TCP_CLIENT link local: (not bound)
+Fri Jan 26 00:00:36 2024 TCP_CLIENT link remote: [AF_INET]127.0.0.1:1080
+Fri Jan 26 00:00:38 2024 event_wait : Interrupted system call (code=4)
+Fri Jan 26 00:00:38 2024 SIGUSR1[hard,] received, process restarting
+Thu Feb 22 08:14:25 2024 WARNING: --ns-cert-type is DEPRECATED.  Use --remote-cert-tls instead.
+Thu Feb 22 08:14:25 2024 NOTE: the current --script-security setting may allow this configuration to call user-defined scripts
+Thu Feb 22 08:14:25 2024 TCP/UDP: Preserving recently used remote address: [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:25 2024 Attempting to establish TCP connection with [AF_INET]127.0.0.1:1080 [nonblock]
+Thu Feb 22 08:14:25 2024 TCP connection established with [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:25 2024 TCP_CLIENT link local: (not bound)
+Thu Feb 22 08:14:25 2024 TCP_CLIENT link remote: [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:26 2024 event_wait : Interrupted system call (code=4)
+Thu Feb 22 08:14:26 2024 SIGUSR1[hard,] received, process restarting
+Thu Feb 22 08:14:36 2024 WARNING: --ns-cert-type is DEPRECATED.  Use --remote-cert-tls instead.
+Thu Feb 22 08:14:36 2024 NOTE: the current --script-security setting may allow this configuration to call user-defined scripts
+Thu Feb 22 08:14:36 2024 TCP/UDP: Preserving recently used remote address: [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:36 2024 Attempting to establish TCP connection with [AF_INET]127.0.0.1:1080 [nonblock]
+Thu Feb 22 08:14:36 2024 TCP connection established with [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:36 2024 TCP_CLIENT link local: (not bound)
+Thu Feb 22 08:14:36 2024 TCP_CLIENT link remote: [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:36 2024 event_wait : Interrupted system call (code=4)
+Thu Feb 22 08:14:36 2024 SIGUSR1[hard,] received, process restarting
+Thu Feb 22 08:14:56 2024 WARNING: --ns-cert-type is DEPRECATED.  Use --remote-cert-tls instead.
+Thu Feb 22 08:14:56 2024 NOTE: the current --script-security setting may allow this configuration to call user-defined scripts
+Thu Feb 22 08:14:56 2024 TCP/UDP: Preserving recently used remote address: [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:56 2024 Attempting to establish TCP connection with [AF_INET]127.0.0.1:1080 [nonblock]
+Thu Feb 22 08:14:56 2024 TCP connection established with [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:56 2024 TCP_CLIENT link local: (not bound)
+Thu Feb 22 08:14:56 2024 TCP_CLIENT link remote: [AF_INET]127.0.0.1:1080
+Thu Feb 22 08:14:56 2024 event_wait : Interrupted system call (code=4)
+Thu Feb 22 08:14:56 2024 SIGUSR1[hard,] received, process restarting

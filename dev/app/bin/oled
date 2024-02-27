@@ -1,0 +1,6 @@
+#!/system/bin/busybox sh
+
+PATH=/bin:/sbin:/app/bin:/system/sbin:/system/bin:/system/xbin
+LD_LIBRARY_PATH=/app/lib:/system/lib:/system/lib/glibc:/opt/lib
+
+LD_PRELOAD="/app/bin/oled_hijack/mod/oled_hijack.so" exec /app/bin/oled.orig
